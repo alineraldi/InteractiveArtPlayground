@@ -26,7 +26,7 @@ const ColorBlob: React.FC<ColorBlobProps> = ({ initialSize = '50px'}) => {
     const blobStyle: CSSProperties = {
         width: size,
         height: size,
-        backgroundColor: backgroundColor || '#B38D97',
+        backgroundColor: backgroundColor || '#A1C084',
         borderRadius: '50%',
         transition: 'width 1s ease-in-out, height 1s ease-in-out, background-color 0.3s ease-in-out',
     };
