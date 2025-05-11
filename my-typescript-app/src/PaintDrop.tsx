@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, MouseEventHandler } from 'react';
 import { motion } from 'framer-motion';
 
 interface PaintDrop {
@@ -12,7 +12,7 @@ interface PaintDrop {
 const PaintDropEffect: React.FC = () => {
     const [drops, setDrops] = useState<PaintDrop[]>([]);
     const containerRef = useRef<HTMLDivElement>(null);
-    const colorPalette = ["#B63E4C", "#DB7C26", "#A1C084", "#FFFFFF"]
+    const colorPaletteRef = useRef<string[]>(["#ff7b00", "#ff8800", "#ff9500", "#ffa200", "#f9c74f", "#ffaa00", "#ffb700", "#ffc300", "#ffd000", "#ffdd00"]);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -29,7 +29,7 @@ const PaintDropEffect: React.FC = () => {
                     size: randomSize,
                     color: randomColor,
                 };
-                setDrops((prevDrops) => [...prevDrops, newDrop]);
+                setDrops((prevDrops) => [...prevDrops.slice(-100), newDrop]);
             }
         }, 100);
 
@@ -37,20 +37,31 @@ const PaintDropEffect: React.FC = () => {
     }, []);
 
     const getRandomPaletteColor = () => {
-        const randomIndex = Math.floor(Math.random() * colorPalette.length);
-        return colorPalette[randomIndex];
+        const palette = colorPaletteRef.current;
+        const randomIndex = Math.floor(Math.random() * palette.length);
+        return palette[randomIndex];
     };
+
+    const handleMouseEnter: MouseEventHandler<HTMLDivElement> = () => {
+        colorPaletteRef.current = ["#7400b8", "#6930c3", "#5e60ce", "#5390d9", "#4ea8de", "#56cfe1", "#64dfdf", "#72efdd", "#80ffdb"]};
+
+
+    const handleMouseLeave: MouseEventHandler<HTMLDivElement> = () => {
+        colorPaletteRef.current = ["#ff7b00", "#ff8800", "#ff9500", "#ffa200", "#f9c74f", "#ffaa00", "#ffb700", "#ffc300", "#ffd000", "#ffdd00"]};
 
     return (
         <div
         ref={containerRef}
         style={{
+            
             position: 'relative',
             width: '300px',
             height: '100px',
             backgroundColor: '#2B2D42',
             overflow: 'hidden',
         }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         >
 
         {drops.map((drop) => (

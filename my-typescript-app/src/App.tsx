@@ -16,6 +16,9 @@ function App() {
           my first paint drop effect
         </p>
         <PaintDropEffect />
+        <p>
+          What's your mood?
+        </p>
       </header>
     </div>
   );

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: "Cal Sans", sans-serif;
 }
 
 .App-logo {
@@ -38,5 +39,5 @@
 }
 
 p {
-  color: #ebcfb2;
+  color: #ffff;
 }
