@@ -57,7 +57,6 @@ const PaintDropEffect: React.FC = () => {
             position: 'relative',
             width: '300px',
             height: '100px',
-            backgroundColor: '#2B2D42',
             overflow: 'hidden',
         }}
         onMouseEnter={handleMouseEnter}

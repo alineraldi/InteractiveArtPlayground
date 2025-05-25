@@ -1,6 +1,13 @@
 .App {
   text-align: center;
   font-family: "Cal Sans", sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
 }
 
 .App-logo {
@@ -15,14 +22,6 @@
 }
 
 .App-header {
-  background-color: #2B2D42;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -38,6 +37,82 @@
   }
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-width: 100vw;
+}
+
+.item {
+  display: grid;
+  place-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 3rem;
+  
+}
+
+.moodButton {
+  font-family: "Open Sans", sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-right: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.moodButton:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .moodButton {
+    padding: 0.25em 0.75em;
+  }
+}
+
 p {
-  color: #ffff;
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.8rem;
+  color: #000;
+}
+
+.chaotic-bg {
+  background-size: cover;
+  background-position: center;
+  animation: chaosMove 3s ease;
+}
+
+@keyframes chaosMove {
+  0% {
+    transform: scale(0) translate(0px, 0px) rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    transform: scale(2) translate(-10px, 5px) rotate(7deg);
+    filter: hue-rotate(10deg);
+  }
+  50% {
+    transform: scale(3) translate(-10px, 5px) rotate(2deg);
+    filter: hue-rotate(10deg);
+  }
+    100% {
+    transform: scale(0) translate(-10px, 5px) rotate(-1deg);
+    filter: hue-rotate(5deg);
+  }
 }
