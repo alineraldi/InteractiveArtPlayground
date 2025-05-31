@@ -17,8 +17,8 @@ const MoodManager: React.FC<MoodManagerProps> = ({ currentMood, onMoodChange }) 
     if(currentMood == 'joyful') {
       confetti({
         particleCount: 1000,
-        spread: 100,
-        origin: { y: 0.6 }
+        spread: 1000,
+        origin: { y: 0.3 }
       })
     }
   })

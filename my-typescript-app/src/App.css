@@ -48,7 +48,8 @@
   display: grid;
   place-items: center;
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 3rem;
+  padding: 1rem;
+  margin: 1rem;
   
 }
 
@@ -95,24 +96,24 @@ h6 {
 .chaotic-bg {
   background-size: cover;
   background-position: center;
-  animation: chaosMove 3s ease;
+  animation: chaosMove 0.5s infinite ease-in-out;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1
 }
 
 @keyframes chaosMove {
   0% {
-    transform: scale(0) translate(0px, 0px) rotate(0deg);
+    transform: scale(1) translate(0px, 0px) rotate(0deg);
     filter: hue-rotate(0deg);
   }
-  25% {
-    transform: scale(2) translate(-10px, 5px) rotate(7deg);
-    filter: hue-rotate(10deg);
-  }
   50% {
-    transform: scale(3) translate(-10px, 5px) rotate(2deg);
-    filter: hue-rotate(10deg);
+    transform: scale(1.02) translate(-5px, 3px) rotate(0.3deg);
+    filter: hue-rotate(15deg);
   }
-    100% {
-    transform: scale(0) translate(-10px, 5px) rotate(-1deg);
-    filter: hue-rotate(5deg);
+  100% {
+    transform: scale(1) translate(0px, 0px) rotate(0deg);
+    filter: hue-rotate(0deg);
   }
 }
