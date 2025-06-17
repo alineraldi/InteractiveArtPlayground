@@ -8,6 +8,7 @@ interface MyShape {
     x: number;
     y: number;
     size: number;
+    cornerRadius: number;
     color: string;
 }
 
@@ -37,6 +38,7 @@ const DrawingCanvas: React.FC = () => {
                         x: pointerPosition.x - 25,
                         y: pointerPosition.y - 25,
                         size: 50,
+                        cornerRadius: 5,
                         color: randomColor(),
                     };
 
@@ -61,6 +63,7 @@ const DrawingCanvas: React.FC = () => {
                 y={shape.y}
                 width={shape.size}
                 height={shape.size}
+                cornerRadius={shape.cornerRadius}
                 fill={shape.color}
                 draggable
                 />

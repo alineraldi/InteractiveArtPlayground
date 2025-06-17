@@ -1,12 +1,12 @@
 import { useState } from "react";
-type Mood = 'calm' | 'joyful' | 'chaotic' | 'melancholic';
+type Mood = 'neutral' | 'calm' | 'joyful' | 'chaotic' | 'melancholic';
 
 interface MoodSelectorProps {
     onMoodChange: (mood: Mood) => void;
 }
 
 const MoodSelector: React.FC<MoodSelectorProps> = ({ onMoodChange }) => {
-    const moods: Mood[] = ['calm', 'joyful', 'chaotic', 'melancholic'];
+    const moods: Mood[] = ['neutral', 'calm', 'joyful', 'chaotic', 'melancholic'];
 
     return (
         <div style={{ display: 'inline-block'}}>
